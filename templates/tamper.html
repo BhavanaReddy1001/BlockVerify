@@ -1,4 +1,3 @@
-```html
 {% extends "base.html" %}
 
 {% block content %}
@@ -7,177 +6,144 @@
 
     <p class="eyebrow">SECURITY DEMONSTRATION</p>
 
-    <h1>Tamper Detection</h1>
+    <h1>Blockchain Tampering Test</h1>
 
     <p>
-        Modify a blockchain record and see how the integrity
-        verification system detects the change.
+        Select a student record and change its CGPA.
+        The blockchain will detect the modification because
+        the block data will no longer match its original hash.
     </p>
-
-</section>
-
-
-<section class="tamper-warning">
-
-    <div class="warning-icon">!</div>
-
-    <div>
-        <h2>Demo Mode</h2>
-
-        <p>
-            This page is designed to demonstrate what happens
-            when someone changes data inside a blockchain block.
-        </p>
-    </div>
 
 </section>
 
 
 <section class="tamper-section">
 
-    <div class="section-heading">
-
-        <div>
-            <p class="eyebrow">SELECT BLOCK</p>
-            <h2>Choose a record to modify</h2>
-        </div>
-
-    </div>
-
-
     <div class="tamper-card">
 
-        <div class="tamper-form-group">
+        <div class="section-heading">
 
-            <label for="block-select">
-                Blockchain Block
-            </label>
-
-            <select id="block-select">
-
-                <option value="1">
-                    Block #1 — Ananya Rao
-                </option>
-
-                <option value="2">
-                    Block #2 — Arjun Mehta
-                </option>
-
-                <option value="3">
-                    Block #3 — Sneha Reddy
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="tamper-record">
-
-            <div class="record-header">
-
-                <span>Current Record</span>
-
-                <span class="block-badge valid-badge">
-                    VALID
-                </span>
-
-            </div>
-
-
-            <div class="tamper-grid">
-
-                <div>
-                    <span>Student ID</span>
-                    <strong>RVU25CSE014</strong>
-                </div>
-
-                <div>
-                    <span>Name</span>
-                    <strong>Ananya Rao</strong>
-                </div>
-
-                <div>
-                    <span>Course</span>
-                    <strong>B.Tech CSE</strong>
-                </div>
-
-                <div>
-                    <span>Semester</span>
-                    <strong>3</strong>
-                </div>
-
-                <div>
-                    <span>CGPA</span>
-                    <strong>9.12</strong>
-                </div>
-
+            <div>
+                <p class="eyebrow">SELECT RECORD</p>
+                <h2>Modify Blockchain Data</h2>
             </div>
 
         </div>
 
 
-        <div class="tamper-edit">
+        {% if message %}
 
-            <div class="tamper-form-group">
+        <div class="tamper-result">
 
-                <label for="new-cgpa">
-                    Change CGPA
+            <div>
+
+                <p class="eyebrow">VERIFICATION RESULT</p>
+
+                {% if tampered %}
+
+                    <h2>⚠ Tampering Detected</h2>
+
+                    <p>
+                        {{ message }}
+                    </p>
+
+                {% else %}
+
+                    <h2>{{ message }}</h2>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+
+        {% if chain|length <= 1 %}
+
+            <div class="empty-state">
+
+                <h3>No Student Records Available</h3>
+
+                <p>
+                    Add at least one student record before testing
+                    blockchain tampering.
+                </p>
+
+                <a href="/add-record" class="btn btn-primary">
+                    Add Student Record
+                </a>
+
+            </div>
+
+        {% else %}
+
+        <form method="POST" action="/tamper">
+
+            <div class="form-group">
+
+                <label for="block_index">
+                    Student Record
+                </label>
+
+                <select
+                    id="block_index"
+                    name="block_index"
+                    required
+                >
+
+                    <option value="">
+                        Select a student record
+                    </option>
+
+                    {% for block in chain[1:] %}
+
+                    <option value="{{ block.index }}">
+
+                        Block #{{ block.index }} —
+                        {{ block.student_data.student_id }} —
+                        {{ block.student_data.name }}
+
+                    </option>
+
+                    {% endfor %}
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="new_cgpa">
+                    New CGPA
                 </label>
 
                 <input
                     type="number"
-                    id="new-cgpa"
-                    value="9.12"
+                    id="new_cgpa"
+                    name="new_cgpa"
                     min="0"
                     max="10"
                     step="0.01"
+                    placeholder="Enter a different CGPA"
+                    required
                 >
-
-                <small>
-                    Try changing 9.12 to another value.
-                </small>
 
             </div>
 
-        </div>
-
-
-        <div class="tamper-actions">
 
             <button
-                type="button"
-                class="btn btn-danger"
-                id="tamper-button"
+                type="submit"
+                class="btn btn-primary"
             >
                 Modify Block
             </button>
 
-            <a href="/verify" class="btn btn-secondary">
-                Verify Blockchain
-            </a>
+        </form>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="tamper-result" id="tamper-result">
-
-    <div class="result-icon">!</div>
-
-    <div>
-
-        <p class="eyebrow">VERIFICATION RESULT</p>
-
-        <h2>Tampering Detected</h2>
-
-        <p>
-            The record was modified, but the stored hash no longer
-            matches the calculated hash. The blockchain is invalid.
-        </p>
+        {% endif %}
 
     </div>
 
@@ -188,26 +154,45 @@
 
     <div>
 
-        <p class="eyebrow">RESET DEMO</p>
+        <p class="eyebrow">BLOCKCHAIN STATUS</p>
 
-        <h2>Want to restore the original chain?</h2>
+        {% if chain_valid %}
 
-        <p>
-            Reset the blockchain and run the verification again
-            to show that the chain is valid.
-        </p>
+            <h2>Blockchain is currently valid</h2>
+
+            <p>
+                No tampering has been detected.
+            </p>
+
+        {% else %}
+
+            <h2>Blockchain is currently invalid</h2>
+
+            <p>
+                A block has been modified and its hash no longer
+                matches the stored data.
+            </p>
+
+        {% endif %}
 
     </div>
 
-    <button
-        type="button"
-        class="btn btn-primary"
-        id="reset-button"
-    >
-        Reset Blockchain
-    </button>
+
+    {% if not chain_valid %}
+
+    <form method="POST" action="/tamper/reset">
+
+        <button
+            type="submit"
+            class="btn btn-primary"
+        >
+            Reset Blockchain
+        </button>
+
+    </form>
+
+    {% endif %}
 
 </section>
 
 {% endblock %}
-```

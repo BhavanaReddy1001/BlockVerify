@@ -20,12 +20,17 @@
 
     <div class="chain-info-item">
         <span>Chain Status</span>
-        <strong class="valid-text">VALID</strong>
+
+        {% if chain_valid %}
+            <strong class="valid-text">VALID</strong>
+        {% else %}
+            <strong class="invalid-text">INVALID</strong>
+        {% endif %}
     </div>
 
     <div class="chain-info-item">
         <span>Total Blocks</span>
-        <strong>05</strong>
+        <strong>{{ chain|length }}</strong>
     </div>
 
     <div class="chain-info-item">
@@ -54,23 +59,36 @@
 
     <div class="blockchain-container">
 
-
-        <!-- BLOCK 0 -->
+        {% for block in chain %}
 
         <div class="block-wrapper">
 
-            <div class="block-card genesis-block">
+            <div class="block-card {% if block.index == 0 %}genesis-block{% endif %}">
 
                 <div class="block-header">
 
                     <div>
                         <span class="block-label">BLOCK</span>
-                        <strong>#0</strong>
+                        <strong>#{{ block.index }}</strong>
                     </div>
 
-                    <span class="block-badge">
-                        GENESIS
-                    </span>
+                    {% if block.index == 0 %}
+
+                        <span class="block-badge">
+                            GENESIS
+                        </span>
+
+                    {% else %}
+
+                        <span class="block-badge valid-badge">
+                            {% if chain_valid %}
+                                VALID
+                            {% else %}
+                                CHECK
+                            {% endif %}
+                        </span>
+
+                    {% endif %}
 
                 </div>
 
@@ -78,35 +96,47 @@
                 <div class="block-record">
 
                     <span>Student ID</span>
-                    <strong>RVU25CSE002</strong>
+                    <strong>{{ block.student_data.student_id }}</strong>
 
                 </div>
+
 
                 <div class="block-record">
 
                     <span>Name</span>
-                    <strong>Rahul Kumar</strong>
+                    <strong>{{ block.student_data.name }}</strong>
 
                 </div>
+
 
                 <div class="block-record">
 
                     <span>Course</span>
-                    <strong>B.Tech CSE</strong>
+                    <strong>{{ block.student_data.course }}</strong>
 
                 </div>
+
 
                 <div class="block-record">
 
                     <span>Semester</span>
-                    <strong>3</strong>
+                    <strong>{{ block.student_data.semester }}</strong>
 
                 </div>
+
 
                 <div class="block-record">
 
                     <span>CGPA</span>
-                    <strong>8.45</strong>
+                    <strong>{{ "%.2f"|format(block.student_data.cgpa) }}</strong>
+
+                </div>
+
+
+                <div class="block-record">
+
+                    <span>Timestamp</span>
+                    <strong>{{ block.timestamp }}</strong>
 
                 </div>
 
@@ -115,256 +145,30 @@
 
                     <div>
                         <span>Previous Hash</span>
-                        <code>0</code>
+                        <code>{{ block.previous_hash }}</code>
                     </div>
 
                     <div>
                         <span>Block Hash</span>
-                        <code>a81f...92cd</code>
+                        <code>{{ block.hash }}</code>
                     </div>
 
                 </div>
 
             </div>
+
+
+            {% if not loop.last %}
 
             <div class="chain-arrow">
                 ↓
             </div>
 
-        </div>
-
-
-        <!-- BLOCK 1 -->
-
-        <div class="block-wrapper">
-
-            <div class="block-card">
-
-                <div class="block-header">
-
-                    <div>
-                        <span class="block-label">BLOCK</span>
-                        <strong>#1</strong>
-                    </div>
-
-                    <span class="block-badge valid-badge">
-                        VALID
-                    </span>
-
-                </div>
-
-
-                <div class="block-record">
-
-                    <span>Student ID</span>
-                    <strong>RVU25CSE014</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>Name</span>
-                    <strong>Ananya Rao</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>Course</span>
-                    <strong>B.Tech CSE</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>Semester</span>
-                    <strong>3</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>CGPA</span>
-                    <strong>9.12</strong>
-
-                </div>
-
-
-                <div class="hash-section">
-
-                    <div>
-                        <span>Previous Hash</span>
-                        <code>a81f...92cd</code>
-                    </div>
-
-                    <div>
-                        <span>Block Hash</span>
-                        <code>c72b...18fa</code>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="chain-arrow">
-                ↓
-            </div>
+            {% endif %}
 
         </div>
 
-
-        <!-- BLOCK 2 -->
-
-        <div class="block-wrapper">
-
-            <div class="block-card">
-
-                <div class="block-header">
-
-                    <div>
-                        <span class="block-label">BLOCK</span>
-                        <strong>#2</strong>
-                    </div>
-
-                    <span class="block-badge valid-badge">
-                        VALID
-                    </span>
-
-                </div>
-
-
-                <div class="block-record">
-
-                    <span>Student ID</span>
-                    <strong>RVU25CSE021</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>Name</span>
-                    <strong>Arjun Mehta</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>Course</span>
-                    <strong>B.Tech CSE</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>Semester</span>
-                    <strong>3</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>CGPA</span>
-                    <strong>8.76</strong>
-
-                </div>
-
-
-                <div class="hash-section">
-
-                    <div>
-                        <span>Previous Hash</span>
-                        <code>c72b...18fa</code>
-                    </div>
-
-                    <div>
-                        <span>Block Hash</span>
-                        <code>f31a...74be</code>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="chain-arrow">
-                ↓
-            </div>
-
-        </div>
-
-
-        <!-- BLOCK 3 -->
-
-        <div class="block-wrapper">
-
-            <div class="block-card">
-
-                <div class="block-header">
-
-                    <div>
-                        <span class="block-label">BLOCK</span>
-                        <strong>#3</strong>
-                    </div>
-
-                    <span class="block-badge valid-badge">
-                        VALID
-                    </span>
-
-                </div>
-
-
-                <div class="block-record">
-
-                    <span>Student ID</span>
-                    <strong>RVU25CSE031</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>Name</span>
-                    <strong>Sneha Reddy</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>Course</span>
-                    <strong>B.Tech CSE</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>Semester</span>
-                    <strong>3</strong>
-
-                </div>
-
-                <div class="block-record">
-
-                    <span>CGPA</span>
-                    <strong>9.34</strong>
-
-                </div>
-
-
-                <div class="hash-section">
-
-                    <div>
-                        <span>Previous Hash</span>
-                        <code>f31a...74be</code>
-                    </div>
-
-                    <div>
-                        <span>Block Hash</span>
-                        <code>91de...55ac</code>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
+        {% endfor %}
 
     </div>
 
