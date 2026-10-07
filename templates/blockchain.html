@@ -1,0 +1,395 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <p class="eyebrow">BLOCKCHAIN STRUCTURE</p>
+
+    <h1>Blockchain Explorer</h1>
+
+    <p>
+        Each student record is stored inside a block and linked
+        to the previous block using its SHA-256 hash.
+    </p>
+
+</section>
+
+
+<section class="chain-info">
+
+    <div class="chain-info-item">
+        <span>Chain Status</span>
+        <strong class="valid-text">VALID</strong>
+    </div>
+
+    <div class="chain-info-item">
+        <span>Total Blocks</span>
+        <strong>05</strong>
+    </div>
+
+    <div class="chain-info-item">
+        <span>Hash Algorithm</span>
+        <strong>SHA-256</strong>
+    </div>
+
+</section>
+
+
+<section class="blockchain-section">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">LINKED BLOCKS</p>
+            <h2>Blockchain</h2>
+        </div>
+
+        <a href="/verify" class="btn btn-primary">
+            Verify Chain
+        </a>
+
+    </div>
+
+
+    <div class="blockchain-container">
+
+
+        <!-- BLOCK 0 -->
+
+        <div class="block-wrapper">
+
+            <div class="block-card genesis-block">
+
+                <div class="block-header">
+
+                    <div>
+                        <span class="block-label">BLOCK</span>
+                        <strong>#0</strong>
+                    </div>
+
+                    <span class="block-badge">
+                        GENESIS
+                    </span>
+
+                </div>
+
+
+                <div class="block-record">
+
+                    <span>Student ID</span>
+                    <strong>RVU25CSE002</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Name</span>
+                    <strong>Rahul Kumar</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Course</span>
+                    <strong>B.Tech CSE</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Semester</span>
+                    <strong>3</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>CGPA</span>
+                    <strong>8.45</strong>
+
+                </div>
+
+
+                <div class="hash-section">
+
+                    <div>
+                        <span>Previous Hash</span>
+                        <code>0</code>
+                    </div>
+
+                    <div>
+                        <span>Block Hash</span>
+                        <code>a81f...92cd</code>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="chain-arrow">
+                ↓
+            </div>
+
+        </div>
+
+
+        <!-- BLOCK 1 -->
+
+        <div class="block-wrapper">
+
+            <div class="block-card">
+
+                <div class="block-header">
+
+                    <div>
+                        <span class="block-label">BLOCK</span>
+                        <strong>#1</strong>
+                    </div>
+
+                    <span class="block-badge valid-badge">
+                        VALID
+                    </span>
+
+                </div>
+
+
+                <div class="block-record">
+
+                    <span>Student ID</span>
+                    <strong>RVU25CSE014</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Name</span>
+                    <strong>Ananya Rao</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Course</span>
+                    <strong>B.Tech CSE</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Semester</span>
+                    <strong>3</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>CGPA</span>
+                    <strong>9.12</strong>
+
+                </div>
+
+
+                <div class="hash-section">
+
+                    <div>
+                        <span>Previous Hash</span>
+                        <code>a81f...92cd</code>
+                    </div>
+
+                    <div>
+                        <span>Block Hash</span>
+                        <code>c72b...18fa</code>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="chain-arrow">
+                ↓
+            </div>
+
+        </div>
+
+
+        <!-- BLOCK 2 -->
+
+        <div class="block-wrapper">
+
+            <div class="block-card">
+
+                <div class="block-header">
+
+                    <div>
+                        <span class="block-label">BLOCK</span>
+                        <strong>#2</strong>
+                    </div>
+
+                    <span class="block-badge valid-badge">
+                        VALID
+                    </span>
+
+                </div>
+
+
+                <div class="block-record">
+
+                    <span>Student ID</span>
+                    <strong>RVU25CSE021</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Name</span>
+                    <strong>Arjun Mehta</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Course</span>
+                    <strong>B.Tech CSE</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Semester</span>
+                    <strong>3</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>CGPA</span>
+                    <strong>8.76</strong>
+
+                </div>
+
+
+                <div class="hash-section">
+
+                    <div>
+                        <span>Previous Hash</span>
+                        <code>c72b...18fa</code>
+                    </div>
+
+                    <div>
+                        <span>Block Hash</span>
+                        <code>f31a...74be</code>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="chain-arrow">
+                ↓
+            </div>
+
+        </div>
+
+
+        <!-- BLOCK 3 -->
+
+        <div class="block-wrapper">
+
+            <div class="block-card">
+
+                <div class="block-header">
+
+                    <div>
+                        <span class="block-label">BLOCK</span>
+                        <strong>#3</strong>
+                    </div>
+
+                    <span class="block-badge valid-badge">
+                        VALID
+                    </span>
+
+                </div>
+
+
+                <div class="block-record">
+
+                    <span>Student ID</span>
+                    <strong>RVU25CSE031</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Name</span>
+                    <strong>Sneha Reddy</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Course</span>
+                    <strong>B.Tech CSE</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>Semester</span>
+                    <strong>3</strong>
+
+                </div>
+
+                <div class="block-record">
+
+                    <span>CGPA</span>
+                    <strong>9.34</strong>
+
+                </div>
+
+
+                <div class="hash-section">
+
+                    <div>
+                        <span>Previous Hash</span>
+                        <code>f31a...74be</code>
+                    </div>
+
+                    <div>
+                        <span>Block Hash</span>
+                        <code>91de...55ac</code>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="verify-banner">
+
+    <div>
+
+        <p class="eyebrow">TAMPER DETECTION</p>
+
+        <h2>Think a record was modified?</h2>
+
+        <p>
+            Intentionally modify a block and run verification
+            to see how the blockchain detects the change.
+        </p>
+
+    </div>
+
+    <a href="/tamper" class="btn btn-primary">
+        Test Tampering
+    </a>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,1234 @@
+```css
+/* ================================
+   BLOCKVERIFY - GLOBAL STYLES
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================================
+   NAVIGATION
+   ================================ */
+
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e9f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 18px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.brand span {
+    color: #315efb;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #687386;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #315efb;
+}
+
+
+/* ================================
+   MAIN CONTENT
+   ================================ */
+
+.main-content {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 50px 24px 70px;
+}
+
+
+/* ================================
+   HERO SECTION
+   ================================ */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 55px;
+}
+
+.eyebrow {
+    color: #315efb;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 590px;
+    color: #687386;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+
+/* ================================
+   BUTTONS
+   ================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 19px;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background: #315efb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #244edb;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: white;
+    border: 1px solid #dce2eb;
+    color: #334155;
+}
+
+.btn-secondary:hover {
+    border-color: #315efb;
+    color: #315efb;
+}
+
+
+/* ================================
+   STATUS CARD
+   ================================ */
+
+.status-card {
+    background: #ffffff;
+    border: 1px solid #e2e7ef;
+    border-radius: 12px;
+    padding: 25px;
+
+    box-shadow: 0 8px 25px rgba(30, 45, 70, 0.06);
+}
+
+.status-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #687386;
+    font-size: 13px;
+    font-weight: 600;
+
+    padding-bottom: 18px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    background: #2fb36f;
+    border-radius: 50%;
+}
+
+.status-main {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 25px 0;
+}
+
+.status-check {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf8f1;
+    color: #23945a;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.status-main h2 {
+    font-size: 19px;
+    margin-bottom: 3px;
+}
+
+.status-main p {
+    color: #7b8494;
+    font-size: 12px;
+}
+
+.status-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding-top: 17px;
+    border-top: 1px solid #edf0f4;
+}
+
+.status-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.status-details span {
+    color: #8992a1;
+    font-size: 11px;
+}
+
+.status-details strong {
+    font-size: 12px;
+}
+
+
+/* ================================
+   STATISTICS
+   ================================ */
+
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 55px;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid #e2e7ef;
+    border-radius: 10px;
+    padding: 22px;
+}
+
+.stat-label {
+    display: block;
+    color: #687386;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-note {
+    color: #929aaa;
+    font-size: 11px;
+}
+
+.valid-text {
+    color: #23945a;
+    font-size: 23px;
+}
+
+
+/* ================================
+   RECORDS SECTION
+   ================================ */
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    font-size: 25px;
+    letter-spacing: -0.5px;
+}
+
+.view-link {
+    color: #315efb;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.table-container {
+    background: white;
+    border: 1px solid #e2e7ef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f9fafc;
+}
+
+th {
+    color: #7b8494;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: left;
+    padding: 15px 18px;
+
+    border-bottom: 1px solid #e5e9f0;
+}
+
+td {
+    padding: 17px 18px;
+    font-size: 13px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #fafbfe;
+}
+
+td:first-child {
+    color: #315efb;
+    font-weight: 600;
+}
+
+
+/* ================================
+   VERIFY BANNER
+   ================================ */
+
+.verify-banner {
+    margin-top: 45px;
+
+    background: #172033;
+    color: white;
+
+    border-radius: 12px;
+    padding: 30px 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.verify-banner .eyebrow {
+    color: #8da5ff;
+}
+
+.verify-banner h2 {
+    font-size: 23px;
+    margin-bottom: 6px;
+}
+
+.verify-banner p:not(.eyebrow) {
+    color: #aeb7c7;
+    font-size: 13px;
+    max-width: 600px;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+@media (max-width: 850px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-content {
+        padding: 35px 16px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .verify-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 650px;
+    }
+}
+```
+```css
+/* ================================
+   PAGE HEADER
+   ================================ */
+
+.page-header {
+    margin-bottom: 32px;
+}
+
+.page-header h1 {
+    font-size: 38px;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+.page-header > p:last-child {
+    color: #687386;
+    font-size: 15px;
+    max-width: 650px;
+}
+
+
+/* ================================
+   FORM
+   ================================ */
+
+.form-section {
+    max-width: 850px;
+}
+
+.form-card {
+    background: #ffffff;
+    border: 1px solid #e2e7ef;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(30, 45, 70, 0.05);
+}
+
+.form-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.form-card-header h2 {
+    font-size: 19px;
+}
+
+.form-card-header span {
+    color: #8992a1;
+    font-size: 12px;
+}
+
+
+/* ================================
+   FORM GRID
+   ================================ */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 13px;
+
+    border: 1px solid #dce2eb;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #172033;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #a4acb9;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #315efb;
+    box-shadow: 0 0 0 3px rgba(49, 94, 251, 0.08);
+}
+
+.form-group small {
+    color: #929aaa;
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+
+/* ================================
+   FORM INFORMATION BOX
+   ================================ */
+
+.form-info {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+
+    margin-top: 28px;
+    padding: 15px;
+
+    background: #f7f9ff;
+    border: 1px solid #e3e9ff;
+    border-radius: 8px;
+}
+
+.info-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #315efb;
+    color: white;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.form-info strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.form-info p {
+    color: #687386;
+    font-size: 11px;
+}
+
+
+/* ================================
+   FORM ACTIONS
+   ================================ */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 28px;
+    padding-top: 22px;
+
+    border-top: 1px solid #edf0f4;
+}
+
+
+/* ================================
+   FORM RESPONSIVE
+   ================================ */
+
+@media (max-width: 650px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card {
+        padding: 22px;
+    }
+
+    .form-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+    }
+}
+```
+```css
+/* ================================
+   BLOCKCHAIN PAGE
+   ================================ */
+
+.chain-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 45px;
+}
+
+.chain-info-item {
+    background: #ffffff;
+    border: 1px solid #e2e7ef;
+    border-radius: 10px;
+    padding: 20px 22px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.chain-info-item span {
+    color: #7b8494;
+    font-size: 12px;
+}
+
+.chain-info-item strong {
+    font-size: 20px;
+}
+
+
+/* ================================
+   BLOCKCHAIN CONTAINER
+   ================================ */
+
+.blockchain-section {
+    margin-bottom: 50px;
+}
+
+.blockchain-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+
+/* ================================
+   BLOCK CARD
+   ================================ */
+
+.block-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block-card {
+    width: 100%;
+    background: #ffffff;
+
+    border: 1px solid #dfe5ee;
+    border-radius: 12px;
+
+    padding: 24px;
+
+    box-shadow: 0 6px 20px rgba(30, 45, 70, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.block-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(30, 45, 70, 0.08);
+}
+
+.genesis-block {
+    border-top: 3px solid #315efb;
+}
+
+
+/* ================================
+   BLOCK HEADER
+   ================================ */
+
+.block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 17px;
+    margin-bottom: 18px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.block-header > div {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.block-label {
+    color: #8992a1;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.block-header strong {
+    font-size: 22px;
+}
+
+
+/* ================================
+   BLOCK BADGES
+   ================================ */
+
+.block-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    background: #eef2ff;
+    color: #315efb;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.valid-badge {
+    background: #eaf8f1;
+    color: #23945a;
+}
+
+
+/* ================================
+   BLOCK RECORD DATA
+   ================================ */
+
+.block-record {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.block-record:last-of-type {
+    border-bottom: none;
+}
+
+.block-record span {
+    color: #8992a1;
+    font-size: 11px;
+}
+
+.block-record strong {
+    color: #334155;
+    font-size: 12px;
+}
+
+
+/* ================================
+   HASH SECTION
+   ================================ */
+
+.hash-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    margin-top: 18px;
+    padding-top: 18px;
+
+    border-top: 1px solid #e8ecf2;
+}
+
+.hash-section div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hash-section span {
+    color: #8992a1;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hash-section code {
+    display: block;
+
+    padding: 8px 10px;
+
+    background: #f7f8fa;
+    border: 1px solid #edf0f4;
+    border-radius: 5px;
+
+    color: #4b5563;
+
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* ================================
+   CHAIN ARROW
+   ================================ */
+
+.chain-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    margin: 8px 0;
+
+    border: 1px solid #dce2eb;
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #315efb;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* ================================
+   TAMPER PAGE
+   ================================ */
+
+.tamper-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    margin-bottom: 35px;
+    padding: 20px;
+
+    background: #fff8e8;
+    border: 1px solid #f1dfad;
+    border-radius: 10px;
+}
+
+.warning-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f0b429;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.tamper-warning h2 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.tamper-warning p {
+    color: #7b8494;
+    font-size: 12px;
+}
+
+
+/* ================================
+   TAMPER CARD
+   ================================ */
+
+.tamper-section {
+    max-width: 850px;
+    margin: 0 auto 45px;
+}
+
+.tamper-card {
+    background: #ffffff;
+
+    border: 1px solid #e2e7ef;
+    border-radius: 12px;
+
+    padding: 28px;
+
+    box-shadow: 0 8px 25px rgba(30, 45, 70, 0.05);
+}
+
+
+/* ================================
+   TAMPER FORM
+   ================================ */
+
+.tamper-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.tamper-form-group label {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.tamper-form-group select,
+.tamper-form-group input {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    border: 1px solid #dce2eb;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #172033;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.tamper-form-group select:focus,
+.tamper-form-group input:focus {
+    border-color: #315efb;
+    box-shadow: 0 0 0 3px rgba(49, 94, 251, 0.08);
+}
+
+.tamper-form-group small {
+    color: #929aaa;
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+
+/* ================================
+   TAMPER RECORD
+   ================================ */
+
+.tamper-record {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #f9fafc;
+    border: 1px solid #e5e9f0;
+    border-radius: 8px;
+}
+
+.record-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+
+    border-bottom: 1px solid #e5e9f0;
+
+    color: #687386;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tamper-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.tamper-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tamper-grid span {
+    color: #8992a1;
+    font-size: 10px;
+}
+
+.tamper-grid strong {
+    color: #334155;
+    font-size: 13px;
+}
+
+
+/* ================================
+   TAMPER EDIT
+   ================================ */
+
+.tamper-edit {
+    margin-top: 25px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #edf0f4;
+}
+
+
+/* ================================
+   TAMPER ACTIONS
+   ================================ */
+
+.tamper-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 25px;
+    padding-top: 22px;
+
+    border-top: 1px solid #edf0f4;
+}
+
+
+/* ================================
+   DANGER BUTTON
+   ================================ */
+
+.btn-danger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 19px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #d64545;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn-danger:hover {
+    background: #b93636;
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   TAMPER RESULT
+   ================================ */
+
+.tamper-result {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+    padding: 24px;
+
+    background: #fff2f2;
+    border: 1px solid #f0cccc;
+    border-radius: 10px;
+
+    /* Hidden until tampering is performed */
+    display: none;
+}
+
+.result-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #d64545;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.tamper-result h2 {
+    color: #b93636;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.tamper-result p:not(.eyebrow) {
+    color: #7b8494;
+    font-size: 12px;
+}
+
+
+/* ================================
+   SECTION SUBTITLE
+   ================================ */
+
+.section-subtitle {
+    color: #8992a1;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+
+/* ================================
+   BLOCKCHAIN RESPONSIVE
+   ================================ */
+
+@media (max-width: 700px) {
+
+    .chain-info {
+        grid-template-columns: 1fr;
+    }
+
+    .hash-section {
+        grid-template-columns: 1fr;
+    }
+
+    .tamper-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tamper-actions {
+        flex-direction: column;
+    }
+
+    .tamper-actions .btn {
+        width: 100%;
+    }
+}
+```

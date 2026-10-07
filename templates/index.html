@@ -1,0 +1,177 @@
+```html
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-text">
+        <p class="eyebrow">BLOCKCHAIN RECORD VERIFICATION</p>
+
+        <h1>
+            Verify student records<br>
+            with confidence.
+        </h1>
+
+        <p class="hero-description">
+            BlockVerify stores student academic records in a linked
+            blockchain and checks the integrity of every record.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="/records" class="btn btn-primary">
+                View Records
+            </a>
+
+            <a href="/blockchain" class="btn btn-secondary">
+                Explore Blockchain
+            </a>
+        </div>
+    </div>
+
+    <div class="status-card">
+
+        <div class="status-card-header">
+            <span>Blockchain Status</span>
+            <span class="status-dot"></span>
+        </div>
+
+        <div class="status-main">
+            <span class="status-check">✓</span>
+
+            <div>
+                <h2>Chain Valid</h2>
+                <p>All blocks are properly linked</p>
+            </div>
+        </div>
+
+        <div class="status-details">
+            <div>
+                <span>Last verified</span>
+                <strong>Just now</strong>
+            </div>
+
+            <div>
+                <span>Network</span>
+                <strong>Local Chain</strong>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="stats-section">
+
+    <div class="stat-card">
+        <span class="stat-label">Student Records</span>
+        <strong class="stat-number">05</strong>
+        <span class="stat-note">Stored records</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Blockchain Blocks</span>
+        <strong class="stat-number">05</strong>
+        <span class="stat-note">Linked blocks</span>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Verification</span>
+        <strong class="stat-number valid-text">VALID</strong>
+        <span class="stat-note">No tampering detected</span>
+    </div>
+
+</section>
+
+
+<section class="records-section">
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">RECENT RECORDS</p>
+            <h2>Student Records</h2>
+        </div>
+
+        <a href="/records" class="view-link">
+            View all →
+        </a>
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Semester</th>
+                    <th>CGPA</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>RVU25CSE002</td>
+                    <td>Rahul Kumar</td>
+                    <td>B.Tech CSE</td>
+                    <td>3</td>
+                    <td><strong>8.45</strong></td>
+                </tr>
+
+                <tr>
+                    <td>RVU25CSE014</td>
+                    <td>Ananya Rao</td>
+                    <td>B.Tech CSE</td>
+                    <td>3</td>
+                    <td><strong>9.12</strong></td>
+                </tr>
+
+                <tr>
+                    <td>RVU25CSE021</td>
+                    <td>Arjun Mehta</td>
+                    <td>B.Tech CSE</td>
+                    <td>3</td>
+                    <td><strong>8.76</strong></td>
+                </tr>
+
+                <tr>
+                    <td>RVU25CSE031</td>
+                    <td>Sneha Reddy</td>
+                    <td>B.Tech CSE</td>
+                    <td>3</td>
+                    <td><strong>9.34</strong></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<section class="verify-banner">
+
+    <div>
+        <p class="eyebrow">INTEGRITY CHECK</p>
+        <h2>Is your blockchain still intact?</h2>
+        <p>
+            Run a verification check to make sure no record has
+            been modified without detection.
+        </p>
+    </div>
+
+    <a href="/verify" class="btn btn-primary">
+        Verify Blockchain
+    </a>
+
+</section>
+
+{% endblock %}
+```

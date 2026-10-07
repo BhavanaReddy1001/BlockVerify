@@ -1,0 +1,213 @@
+```html
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <p class="eyebrow">SECURITY DEMONSTRATION</p>
+
+    <h1>Tamper Detection</h1>
+
+    <p>
+        Modify a blockchain record and see how the integrity
+        verification system detects the change.
+    </p>
+
+</section>
+
+
+<section class="tamper-warning">
+
+    <div class="warning-icon">!</div>
+
+    <div>
+        <h2>Demo Mode</h2>
+
+        <p>
+            This page is designed to demonstrate what happens
+            when someone changes data inside a blockchain block.
+        </p>
+    </div>
+
+</section>
+
+
+<section class="tamper-section">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">SELECT BLOCK</p>
+            <h2>Choose a record to modify</h2>
+        </div>
+
+    </div>
+
+
+    <div class="tamper-card">
+
+        <div class="tamper-form-group">
+
+            <label for="block-select">
+                Blockchain Block
+            </label>
+
+            <select id="block-select">
+
+                <option value="1">
+                    Block #1 — Ananya Rao
+                </option>
+
+                <option value="2">
+                    Block #2 — Arjun Mehta
+                </option>
+
+                <option value="3">
+                    Block #3 — Sneha Reddy
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="tamper-record">
+
+            <div class="record-header">
+
+                <span>Current Record</span>
+
+                <span class="block-badge valid-badge">
+                    VALID
+                </span>
+
+            </div>
+
+
+            <div class="tamper-grid">
+
+                <div>
+                    <span>Student ID</span>
+                    <strong>RVU25CSE014</strong>
+                </div>
+
+                <div>
+                    <span>Name</span>
+                    <strong>Ananya Rao</strong>
+                </div>
+
+                <div>
+                    <span>Course</span>
+                    <strong>B.Tech CSE</strong>
+                </div>
+
+                <div>
+                    <span>Semester</span>
+                    <strong>3</strong>
+                </div>
+
+                <div>
+                    <span>CGPA</span>
+                    <strong>9.12</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="tamper-edit">
+
+            <div class="tamper-form-group">
+
+                <label for="new-cgpa">
+                    Change CGPA
+                </label>
+
+                <input
+                    type="number"
+                    id="new-cgpa"
+                    value="9.12"
+                    min="0"
+                    max="10"
+                    step="0.01"
+                >
+
+                <small>
+                    Try changing 9.12 to another value.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="tamper-actions">
+
+            <button
+                type="button"
+                class="btn btn-danger"
+                id="tamper-button"
+            >
+                Modify Block
+            </button>
+
+            <a href="/verify" class="btn btn-secondary">
+                Verify Blockchain
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="tamper-result" id="tamper-result">
+
+    <div class="result-icon">!</div>
+
+    <div>
+
+        <p class="eyebrow">VERIFICATION RESULT</p>
+
+        <h2>Tampering Detected</h2>
+
+        <p>
+            The record was modified, but the stored hash no longer
+            matches the calculated hash. The blockchain is invalid.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="verify-banner">
+
+    <div>
+
+        <p class="eyebrow">RESET DEMO</p>
+
+        <h2>Want to restore the original chain?</h2>
+
+        <p>
+            Reset the blockchain and run the verification again
+            to show that the chain is valid.
+        </p>
+
+    </div>
+
+    <button
+        type="button"
+        class="btn btn-primary"
+        id="reset-button"
+    >
+        Reset Blockchain
+    </button>
+
+</section>
+
+{% endblock %}
+```

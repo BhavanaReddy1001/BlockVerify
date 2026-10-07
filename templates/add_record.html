@@ -1,0 +1,250 @@
+```html
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <p class="eyebrow">STUDENT RECORDS</p>
+
+    <h1>Add Student Record</h1>
+
+    <p>
+        Enter the student's academic details below.
+        The record will be added to the blockchain after submission.
+    </p>
+
+</section>
+
+
+<section class="form-section">
+
+    <div class="form-card">
+
+        <div class="form-card-header">
+
+            <h2>Student Information</h2>
+
+            <span>All fields required</span>
+
+        </div>
+
+
+        <form
+            id="student-form"
+            method="POST"
+            action="/add-record"
+        >
+
+            <div class="form-grid">
+
+
+                <!-- Student ID -->
+
+                <div class="form-group">
+
+                    <label for="student_id">
+                        Student ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="student_id"
+                        name="student_id"
+                        placeholder="e.g. RVU25CSE002"
+                        required
+                    >
+
+                    <small>
+                        Enter the official student ID.
+                    </small>
+
+                </div>
+
+
+                <!-- Student Name -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="e.g. Rahul Kumar"
+                        required
+                    >
+
+                    <small>
+                        Enter the student's full name.
+                    </small>
+
+                </div>
+
+
+                <!-- Course -->
+
+                <div class="form-group">
+
+                    <label for="course">
+                        Course
+                    </label>
+
+                    <input
+                        type="text"
+                        id="course"
+                        name="course"
+                        placeholder="e.g. B.Tech CSE"
+                        required
+                    >
+
+                    <small>
+                        Enter the student's course.
+                    </small>
+
+                </div>
+
+
+                <!-- Semester -->
+
+                <div class="form-group">
+
+                    <label for="semester">
+                        Semester
+                    </label>
+
+                    <select
+                        id="semester"
+                        name="semester"
+                        required
+                    >
+
+                        <option value="">
+                            Select semester
+                        </option>
+
+                        <option value="1">
+                            Semester 1
+                        </option>
+
+                        <option value="2">
+                            Semester 2
+                        </option>
+
+                        <option value="3">
+                            Semester 3
+                        </option>
+
+                        <option value="4">
+                            Semester 4
+                        </option>
+
+                        <option value="5">
+                            Semester 5
+                        </option>
+
+                        <option value="6">
+                            Semester 6
+                        </option>
+
+                        <option value="7">
+                            Semester 7
+                        </option>
+
+                        <option value="8">
+                            Semester 8
+                        </option>
+
+                    </select>
+
+                    <small>
+                        Select the current semester.
+                    </small>
+
+                </div>
+
+
+                <!-- CGPA -->
+
+                <div class="form-group">
+
+                    <label for="cgpa">
+                        CGPA
+                    </label>
+
+                    <input
+                        type="number"
+                        id="cgpa"
+                        name="cgpa"
+                        placeholder="e.g. 8.45"
+                        min="0"
+                        max="10"
+                        step="0.01"
+                        required
+                    >
+
+                    <small>
+                        Enter CGPA between 0 and 10.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Blockchain Information -->
+
+            <div class="form-info">
+
+                <div class="info-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <strong>
+                        Blockchain record
+                    </strong>
+
+                    <p>
+                        Once submitted, the student's information
+                        will be stored as part of a new blockchain
+                        block and protected using SHA-256 hashing.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Form Actions -->
+
+            <div class="form-actions">
+
+                <a
+                    href="/records"
+                    class="btn btn-secondary"
+                >
+                    Cancel
+                </a>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Add Record
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}
+```
